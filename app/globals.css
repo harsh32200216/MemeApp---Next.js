@@ -16,14 +16,40 @@
   }
 }
 
+.grid {
+  margin-top: 90px;
+}
+
+.icon {
+  height: 3em;
+}
+
+span {
+  width: 1em;
+}
+
+header {
+  position: fixed;
+  background-color: black;
+  margin: -90px -20%;
+  width: 100%;
+  height: 75px;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  color: #fff;
+  font-family: "McLaren", cursive;
+  font-size: 1.8em;
+  font-weight: 200;
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #eee;
+  background-image: url("/images/bg.png");
+  background-attachment: fixed;
+  padding: 0 20%;
 }
 
 @layer utilities {
