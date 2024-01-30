@@ -14,7 +14,7 @@ export function Memes({ memes }: MemeProps) {
         <Gallery withCaption withDownloadButton>
             <section className="gap-x-4 my-3 grid grid-cols-gallery auto-rows-[10px]">
                 {actualMemes ? (
-                    actualMemes.map((element) => (<MemeCard meme={element} />))
+                    actualMemes.map((element: Meme) => (<MemeCard meme={element} />))
                 ) : (
                     <h2>No meme</h2>
                 )}
