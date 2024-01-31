@@ -1,3 +1,11 @@
+# MemeApp---Next.js
+
+A meme gallery built using Next.js 14, react-photoswipe-gallery and API from reddit (https://www.reddit.com/r/memes.json?limit=1000&after=), MemeApp features infinite scrolling. Check it out on https://meme-app-six-steel.vercel.app/ .
+
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

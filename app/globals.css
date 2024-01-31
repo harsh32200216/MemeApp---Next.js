@@ -52,6 +52,15 @@ body {
   padding: 0 20%;
 }
 
+@media only screen and (max-width: 400px) {
+  header {
+    margin: -90px -15%;
+  }
+  body {
+    padding: 0 15%;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
