@@ -17,7 +17,6 @@ export function LoadMore() {
             try {
                 fetchMemes(loaded).then((res) => {
                     const newMemes = res.children;
-                    console.log(newMemes);
                     setMemes((previousMemes: Meme[]) => [...previousMemes, ...newMemes]);
                     setLoaded(res.after);
                 });

@@ -12,7 +12,7 @@ export function Memes({ memes }: MemeProps) {
     const actualMemes = memes?.slice(1);
     return (
         <Gallery withCaption withDownloadButton>
-            <section className="gap-x-4 my-3 grid grid-cols-gallery auto-rows-[10px]">
+            <section className="my-3 grid">
                 {actualMemes ? (
                     actualMemes.map((element: Meme) => (<MemeCard key={element.data.name} meme={element} />))
                 ) : (
