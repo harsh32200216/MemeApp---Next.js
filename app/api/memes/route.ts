@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
     try {
         const response = await fetch(uri, {
             headers: {
-                'User-Agent': 'MemeApp/1.0 (Server-Side)',
+                'User-Agent': 'web:MemeApp:1.0 (by /u/harsh32200216)',
                 'Accept': 'application/json',
                 'Cache-Control': 'no-cache',
             },
