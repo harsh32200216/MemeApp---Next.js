@@ -11,7 +11,7 @@ export async function GET(request: NextRequest) {
         console.log(`Fetching Reddit API: ${uri}`);
         const response = await fetch(uri, {
             headers: {
-                'User-Agent': 'web:MemeApp:1.0 (by /u/harsh32200216)',
+                'User-Agent': 'web:MemeApp:1.0 (by /u/Minute_Emergency8530)',
                 'Accept': 'application/json',
                 'Referer': 'https://www.reddit.com/',
                 'Cache-Control': 'no-cache',
