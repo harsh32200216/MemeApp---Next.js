@@ -1,7 +1,7 @@
 "use client";
 
 import { Meme } from "@/types";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Spinner } from "./spinner";
 import { fetchMemes } from "@/actions/fetch";
@@ -13,15 +13,18 @@ export function LoadMore() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [hasMore, setHasMore] = useState(true);
+    const loadingRef = useRef(false);
     const { ref, inView } = useInView();
 
     useEffect(() => {
-        if (inView && !loading && hasMore) {
+        if (inView && !loadingRef.current && hasMore) {
             loadMoreMemes();
         }
-    }, [inView]);
+    }, [inView, hasMore]);
 
     const loadMoreMemes = async () => {
+        if (loadingRef.current) return;
+        loadingRef.current = true;
         setLoading(true);
         setError(null);
         
@@ -49,6 +52,7 @@ export function LoadMore() {
             setError(errorMessage);
             console.error("LoadMore error:", error);
         } finally {
+            loadingRef.current = false;
             setLoading(false);
         }
     };

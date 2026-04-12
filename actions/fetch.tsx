@@ -2,7 +2,12 @@ export async function fetchMemes(after: string) {
     const uri = `https://www.reddit.com/r/memes.json?limit=20&after=${after}`;
 
     try {
-        const response = await fetch(uri);
+        const response = await fetch(uri, {
+            headers: {
+                'Accept': 'application/json',
+            },
+            cache: 'no-store',
+        });
 
         if (!response.ok) {
             throw new Error(`Reddit API error: ${response.status} ${response.statusText}`);
