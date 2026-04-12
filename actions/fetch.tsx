@@ -1,29 +1,18 @@
 export async function fetchMemes(after: string) {
-    // Call our own API route instead of Reddit directly
-    const uri = `/api/memes?after=${after}&limit=20`;
+    const uri = `https://www.reddit.com/r/memes.json?limit=20&after=${after}`;
 
     try {
-        const response = await fetch(uri, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            cache: 'no-store' // Ensure fresh data
-        });
-        
+        const response = await fetch(uri);
+
         if (!response.ok) {
-            throw new Error(`API error: ${response.status} ${response.statusText}`);
+            throw new Error(`Reddit API error: ${response.status} ${response.statusText}`);
         }
-        
+
         const data = await response.json();
-        
-        if (!data.success) {
-            throw new Error(data.error || 'API request failed');
-        }
-        
+
         return {
-            children: data.children || [],
-            after: data.after,
+            children: data.data?.children || [],
+            after: data.data?.after || null,
             success: true
         };
     }
